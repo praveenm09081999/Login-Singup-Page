@@ -1,0 +1,39 @@
+
+    <div>
+      <mat-card style="
+      background: linear-gradient(90deg, #dbbf39, #2d2186cc);
+  ">
+      <div layout="column"  layout-align="space-between center">
+      <div>
+          <mat-form-field appearance="fill" style="width: 50%;"
+          >
+            <mat-label>Email:</mat-label>
+            <input matInput placeholder="Enter an email" type="email" name="email" [(ngModel)]="email" ngDefaultControl 
+            style="background: transparent">
+          </mat-form-field>
+      </div>
+      <div>
+          <mat-form-field  appearance="fill" style="width: 50%;">
+            <mat-label>Password:</mat-label>
+            <input matInput placeholder="Enter a Password" type="password" [(ngModel)]="password" name="password" ngDefaultControl>  
+          </mat-form-field>
+      </div>
+    </div>
+  </mat-card>
+  <mat-card *ngIf="type == 'login'">
+    <mat-card-content layout="row" layout-align="space-between center">
+      <button mat-raised-button color="primary" (click)="postLogin()">Login
+      </button>
+      <button mat-raised-button color="accent" style="margin-left: 3%;" (click)="togglePage()">Need to Register?
+      </button>
+  </mat-card-content>
+  </mat-card>
+  <mat-card *ngIf="type == 'register'">
+    <mat-card-content layout="row" layout-align="space-between center">
+      <button mat-raised-button color="primary" (click)="postRegister()">Register
+      </button>
+      <button mat-raised-button color="accent" style="margin-left: 3%;" (click)="togglePage()">Trying to Login?
+      </button>
+  </mat-card-content>
+  </mat-card>
+    </div>
